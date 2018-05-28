@@ -1,5 +1,7 @@
 # Bible-Trivia
 
+Try to guess the correct answer for each question.
+
 
 
 Developer notes:
