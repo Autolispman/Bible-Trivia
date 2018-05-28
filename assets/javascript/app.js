@@ -1,78 +1,112 @@
 // let $ = require("jQuery") ;
- $(document).ready(function () {
+$(document).ready(function () {
     let unanswered = 0;
     let correct = 0;
     let incorrect = 0;
     let dataMapArray = [];
     let dataMap = new Map();
-     let fileContent = readTextFile('../data/TriviaQuestions.txt')
-    console.log(fileContent);
+    let backgroundCount = 0;
+    //  let fileContent = readTextFile('../data/TriviaQuestions.txt')
+    // console.log(fileContent);
 
     dataMap.set("mapIndex", 1)
-    dataMap.set("question", "What is the common term for a list of things a person would like to do before they die?");
-    dataMap.set("answer", "Bucket list");
-    dataMap.set("bogus answers", ["Memoir", "Bucket list", "Tidy up", "Biography"]);
+    dataMap.set("question", "Who was struck blind on the road to Damascus?");
+    dataMap.set("answer", "Saul");
+    dataMap.set("bogus answers", ["Philip", "Peter", "Saul", "Elymas"]);
+    dataMap.set("reference", "Acts 9:3-8");
     dataMapArray.push(dataMap);
 
     dataMap = new Map()
     dataMap.set("mapIndex", 2)
-    dataMap.set("question", "“Hey Boo Boo, let’s go get us a pic-a-nic basket!”, is a famous line often said by which cartoon character?");
-    dataMap.set("answer", "Yogi Bear");
-    dataMap.set("bogus answers", ["Yogi Bear", "Woody Woodpecker", "Popeye", "Batman"]);
-    dataMapArray.push(dataMap);
+    dataMap.set("question", "On what hill was Jesus crucified?");
+    dataMap.set("answer", "Golgotha");
+    dataMap.set("bogus answers", ["Golgotha", "Sinai", "Horeb", "Ararat"]);
+    dataMap.set("reference", "John 19:17");
 
     dataMap = new Map()
     dataMap.set("mapIndex", 3)
-    dataMap.set("question", "What does the muppet Oscar the Grouch live in?");
-    dataMap.set("answer", "A trash can");
-    dataMap.set("bogus answers", ["Dog house", "Mailbox", "A trash can", "Tree"]);
+    dataMap.set("question", "What was Peter profession?");
+    dataMap.set("answer", "Fisherman");
+    dataMap.set("bogus answers", ["Tanner", "Tentmaker", "Carpenter", "Fisherman"]);
+    dataMap.set("reference", "Matthew 4:18");
     dataMapArray.push(dataMap);
 
     dataMap = new Map()
     dataMap.set("mapIndex", 4)
-    dataMap.set("question", "Stratus, Cirrus and Cumulus are types of what?");
-    dataMap.set("answer", "Clouds");
-    dataMap.set("bogus answers", ["Tornados", "Weather patterns", "Types of hail", "Clouds"]);
+    dataMap.set("question", "Who slew Goliath?");
+    dataMap.set("answer", "David");
+    dataMap.set("bogus answers", ["Daniel", "David", "Joshua", "Jonathan"]);
+    dataMap.set("reference", "I Samuel 17");
     dataMapArray.push(dataMap);
 
     dataMap = new Map()
     dataMap.set("mapIndex", 5)
-    dataMap.set("question", "Who was the first woman to be inducted into the Rock and Roll Hall of Fame?");
-    dataMap.set("answer", "Aretha Franklin");
-    dataMap.set("bogus answers", ["Donna Summers", "Tina Turner", "Aretha Franklin", "Madonna"]);
+    dataMap.set("question", "Of what were John the Baptist’s clothes made?");
+    dataMap.set("answer", "Camel’s hair");
+    dataMap.set("bogus answers", ["Sheep’s Wool", "Woven Flax", "Silk", "Camel’s hair"]);
+    dataMap.set("reference", "Mark 1:6");
     dataMapArray.push(dataMap);
 
     dataMap = new Map()
     dataMap.set("mapIndex", 6)
-    dataMap.set("question", "The 1927 New York Yankees batting order, including Babe Ruth and Lou Gehrig, was known by what nickname?");
-    dataMap.set("answer", "Murderer’s Row");
-    dataMap.set("bogus answers", ["Murderer’s Row", "The Nialators", "The Cleaners", "Terminators"]);
+    dataMap.set("question", "Who is the oldest man in the Bible?");
+    dataMap.set("answer", "Methuselah");
+    dataMap.set("bogus answers", ["Methuselah", "Mephibosheth", "Malachi", "Melchizedek"]);
+    dataMap.set("reference", "Genesis 5:27");
     dataMapArray.push(dataMap);
 
     dataMap = new Map()
     dataMap.set("mapIndex", 7)
-    dataMap.set("question", "Jamón ibérico is a type of cured ham that is traditionally produced by which two neighboring countries?");
-    dataMap.set("answer", "Spain and Portugal");
-    dataMap.set("bogus answers", ["Brazil and Bolivia", "Spain and Portugal", "Russia and Mongolia", "France and Germany"]);
+    dataMap.set("question", "For what charge was Daniel thrown into lion’s den?");
+    dataMap.set("answer", "Praying to God");
+    dataMap.set("bogus answers", ["Not eating the King’s food", "Praying to God", "Because He was an Israelite", "Not bowing before the King’s golden image"]);
+    dataMap.set("reference", "Daniel 6:6-16");
     dataMapArray.push(dataMap);
 
     dataMap = new Map()
     dataMap.set("mapIndex", 8)
-    dataMap.set("question", "Dendrophobia is the fear of what?");
-    dataMap.set("answer", "Trees");
-    dataMap.set("bogus answers", ["Snakes", "Spiders", "Hurting someone's feelings", "Trees"]);
+    dataMap.set("question", "What does Jesus say not to cast before swine?");
+    dataMap.set("answer", "Pearls");
+    dataMap.set("bogus answers", ["Coins", "Rubies", "Diamond", "Pearls"]);
+    dataMap.set("reference", "Matthew 7:6");
     dataMapArray.push(dataMap);
 
     dataMap = new Map()
     dataMap.set("mapIndex", 9)
-    dataMap.set("question", "Head and Shoulders is a brand of shampoo that claims to deal with what common chronic scalp condition?");
-    dataMap.set("answer", "Dandruff");
-    dataMap.set("bogus answers", ["Split ends", "Dandruff", "Psoriasis", "Lice"]);
+    dataMap.set("question", "How long did Jesus fast in the wilderness?");
+    dataMap.set("answer", "40 days");
+    dataMap.set("bogus answers", ["40 days", "3 days", "4 weeks", "30 days"]);
+    dataMap.set("reference", "Luke 4:2");
     dataMapArray.push(dataMap);
+
+    dataMap = new Map()
+    dataMap.set("mapIndex", 10)
+    dataMap.set("question", "On which day did God create man?");
+    dataMap.set("answer", "6");
+    dataMap.set("bogus answers", ["5", "6", "4", "7"]);
+    dataMap.set("reference", "Genesis 1:26-31");
+    dataMapArray.push(dataMap);
+
+    dataMap = new Map()
+    dataMap.set("mapIndex", 11)
+    dataMap.set("question", "Who traded his birthright for a bowl of lentil stew?");
+    dataMap.set("answer", "Esau");
+    dataMap.set("bogus answers", ["Ehud", "Ezra", "Esau", "Enoch"]);
+    dataMap.set("reference", "Genesis 25:29-34");
+    dataMapArray.push(dataMap);
+
+    dataMap = new Map()
+    dataMap.set("mapIndex", 12)
+    dataMap.set("question", "How many people were saved in the ark?");
+    dataMap.set("answer", "8");
+    dataMap.set("bogus answers", ["1", "8", "12", "7"]);
+    dataMap.set("reference", "I Peter 3:20");
+    dataMapArray.push(dataMap);    
 
     let numberOfAnswered = [];
     let timerHandle;
     let questionNumber = 0;
+    let questionGroup = 9;
 
     function setUpGame() {
         unanswered = 0;
@@ -93,14 +127,36 @@
         $("#qAndAId").append(newDiv).end();
         for (let i = 0; i < dataMapArray[questionNumber].get("bogus answers").length; i++) {
             let ansDiv = $("<a>");
-            ansDiv.attr("href", "#").attr("correctAnswer", dataMapArray[questionNumber].get("answer"));
+            ansDiv.attr("href", "#").attr("correctAnswer", dataMapArray[questionNumber].get("answer")).attr("reference", dataMapArray[questionNumber].get("reference"));
             ansDiv.text(dataMapArray[questionNumber].get("bogus answers")[i]);
             ansDiv.addClass("answer");
             $("#qAndAId").append(ansDiv).end();
         }
         $("#timerId").removeClass("timerOff").addClass("timerOn");
-        timerHandle = countDown("timerId", 30000, "Times up!", shutDownQuestion);
-        questionNumber++;
+        timerHandle = countDown("timerId", 20000, "Times up!", shutDownQuestion);
+        //$("body").css("background-image", "url('assets/images/bibleBackground" + backgroundCount + ".jpg')");
+        backgroundCount++;
+        if(backgroundCount > 6) backgroundCount = 1;
+        switch (backgroundCount) {
+            case 1:
+            $("body").css("background-image", "url('assets/images/bibleBackground1.jpg')");
+            break;
+            case 2:
+            $("body").css("background-image", "url('assets/images/bibleBackground2.jpg')");
+            break;
+            case 3:
+            $("body").css("background-image", "url('assets/images/bibleBackground3.jpg')");
+            break;
+            case 4:
+            $("body").css("background-image", "url('assets/images/bibleBackground4.jpg')");
+            break;
+            case 5:
+            $("body").css("background-image", "url('assets/images/bibleBackground5.jpg')");
+            break;
+            case 6:
+            $("body").css("background-image", "url('assets/images/bibleBackground6.jpg')");
+            break;
+        }        
     }
 
     function shutDownQuestion() {
@@ -115,21 +171,23 @@
                 correct++;
                 let newDiv = $("<div>");
                 newDiv.addClass("question")
-                newDiv.text("Correct!");
+                newDiv.text("Correct! " + guess.attr("reference"));
                 $("#qAndAId").empty();
                 $("#qAndAId").append(newDiv);
+                appendPic();
             }
             else {
                 incorrect++;
                 let newDiv = $("<div>");
                 newDiv.addClass("question")
-                newDiv.text("Wrong!");
+                newDiv.text("Whoops!");
                 $("#qAndAId").empty();
                 $("#qAndAId").append(newDiv);
                 let ansDiv = $("<div>");
                 ansDiv.addClass("question");
-                ansDiv.text("The correct answer is: " + guess.attr("correctAnswer"));
+                ansDiv.text("The correct answer is: " + guess.attr("correctAnswer") + " " + guess.attr("reference"));
                 $("#qAndAId").append(ansDiv).end();
+                appendPic();
             }
         }
         else {
@@ -144,32 +202,35 @@
             ansDiv.addClass("question");
             ansDiv.text("The correct answer is: " + ans);
             $("#qAndAId").append(ansDiv).end();
+            appendPic();
 
         }
-        if (questionNumber === dataMapArray.length) {
-            processResults();
-            questionNumber = 0
+        if (questionNumber === questionGroup) {
+            setTimeout(processResults, 3000);
+            questionGroup = questionGroup + 10;
         }
         else {
-            setTimeout(setUpQues, 2000);
+            setTimeout(setUpQues, 3000);
+        }
+        questionNumber++;
+        if (questionNumber === dataMapArray.length) {
+            questionNumber = 0;
+            questionGroup = 0;
         }
     }
 
-    function processResults() {
+    function appendPic() {
+        let picNum = numberGenerator(1, 50);
+        let newImg = $("<img>");
+        newImg.attr("src", "assets/images/giphy" + picNum + ".gif").addClass("imgPic");
+        newImg.addClass("imgGif");
+        let newDiv = $("<div>");
+        newDiv.addClass("imgDiv");
+        newDiv.append(newImg).end();
+        $("#qAndAId").append(newDiv).end();
+    }
 
-        // for(let i = 0; i < dataMapArray.length; i++) {
-        //     if(dataMapArray[i].get("guess") === "") {
-        //         unanswered++;
-        //     }
-        //     else {
-        //         if(dataMapArray[i].get("guess") === dataMapArray[i].get("answer")) {
-        //             correct++;
-        //         }
-        //         else {
-        //             incorrect++;
-        //         }
-        //     }
-        // }
+    function processResults() {
         $("#qAndAId").empty();
         let message = $("<p>");
         message.addClass("question");
@@ -194,32 +255,7 @@
         newRestartDiv.addClass("startDiv");
         newRestartDiv.append(newRestart).end();
         $("#qAndAId").append(newRestartDiv).end();
-
     }
-
-    // function putFormInList(button) {        
-    //     let isInList = false;
-    //     let form = button.parent();
-    //     form.attr("answer", button.attr("answer"));
-    //     for(let i = 0; i < numberOfAnswered.length; i++) {
-    //         if(numberOfAnswered[i].attr("index") === form.attr("index")) {
-    //             numberOfAnswered[i] = form;
-    //             isInList = true;
-    //         }
-    //     }
-    //     if(isInList === false) {
-    //         numberOfAnswered.push(form);            
-    //     }   
-    //     updateMaps(button);
-    // }
-
-    // function updateMaps(button) {
-    //     for(let i = 0; i < dataMapArray.length; i++) {
-    //         if(dataMapArray[i].get("mapIndex").toString() === button.attr("mapIndex")) {
-    //             dataMapArray[i].set("guess", button.attr("guess"));               
-    //         }   
-    //     }
-    // }
 
     $(document).on("click", ".start", function () {
         $("#startDivId").empty();
@@ -228,11 +264,5 @@
 
     $(document).on("click", ".answer", function () {
         revealAnswer($(this));
-
-        // putFormInList($(this));
-        // if(numberOfAnswered.length === dataMapArray.length) {
-        //     shutDownGame();
-        // }
     });
-    
 });

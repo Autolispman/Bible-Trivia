@@ -82,3 +82,13 @@ body {
     color: red;
     visibility: visible;
 }
+
+.imgDiv {
+    margin: 0 auto;
+    width: 400px;
+    padding: 0 0 28px 0;
+}
+
+.imgPic {
+    width: 100%;
+}
