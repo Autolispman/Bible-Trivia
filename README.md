@@ -1,5 +1,6 @@
 # Bible-Trivia
 
+Trivia questions from the bible.
 Try to guess the correct answer for each question.
 
 
